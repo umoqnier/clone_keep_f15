@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+   {% block title %} Index {% endblock%}
+    
+    {% block content %}
+        <div class="row">
+        {%for recordatorio in recordatorios %}
+        <div class="col s12 m6">
+          <div class="card blue-grey lighten-5">
+            <div class="card-content black-text">
+              <span class="card-title">{{recordatorio.titulo}}</span>
+              <p>{{recordatorio.descripcion}}</p>
+             </div>
+            <div class="card-action">
+              <a href="{% url 'landing:detalle' recordatorio.id %}">Detalle</a>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+        </div>
+    {% endblock %}
+
